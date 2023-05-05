@@ -25,6 +25,12 @@ Apache-2.0
 @firebase/app
 Apache-2.0
 
+@firebase/app-check
+Apache-2.0
+
+@firebase/auth
+Apache-2.0
+
 @firebase/component
 Apache-2.0
 
@@ -75,6 +81,10 @@ THE SOFTWARE.
 firebase/analytics
 
 firebase/app
+
+firebase/app-check
+
+firebase/auth
 
 firebase/messaging
 
