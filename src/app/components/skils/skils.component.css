@@ -1,0 +1,47 @@
+.container-fluid{
+    margin-top: 10px;
+    border-radius: 10px;
+    border: thick double black;
+    background-color: rgba(151, 150, 148, 0.429);
+    justify-content: stretch;
+}
+.row1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.row2{
+    display: flex;
+    align-items: center;
+}
+#item{    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 300px;
+    width: 30%;
+    margin-top: 20px;
+    border-radius: 10px;
+    border-top: rgba(151, 128, 83, 0.631) solid;
+    border-bottom: rgba(151, 128, 83, 0.287) solid;
+    background-color: rgba(133, 133, 82, 0.075);
+}
+#itemContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+#editBtn{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.row-sub1{
+    display: flex;
+    margin-top: 10px;  
+    width: 100%;
+}

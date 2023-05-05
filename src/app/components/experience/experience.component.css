@@ -1,0 +1,42 @@
+.container-fluid{
+    margin-top: 10px;
+    border-radius: 10px;
+    border: thick double black;
+    background-color: rgba(151, 150, 148, 0.429);
+    justify-content: stretch;
+}
+.row1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.row2{    
+    display: flex;
+    margin-top: 20px;
+    border-radius: 10px;
+    border-top: rgba(151, 128, 83, 0.631) solid;
+    border-bottom: rgba(151, 128, 83, 0.287) solid;
+    background-color: rgba(133, 133, 82, 0.075);
+}
+img{
+    height: 100%;
+    width: 100%;
+}
+#imgContainer{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 3px;
+    margin-right: 5px;
+    
+}
+#expBtn{
+    display: flex;
+    justify-content: center;
+}
+#icon-edit{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}

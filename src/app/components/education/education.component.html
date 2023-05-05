@@ -1,0 +1,63 @@
+<div class="container-fluid">
+
+    <div class="row1">
+        <div class="col-11" >
+            <h1>Educacion</h1>
+        </div>
+        <div class="col-1" id="expBtn">
+            <button type="button" class="btn btn-outline-secondary" style="width: 100px; height: 70;" 
+            *ngIf="isLogged" routerLink="/new-edu" >
+                <i class="bi bi-file-earmark-plus"></i>
+                
+            </button>
+        </div>
+
+    </div>
+    
+    <ul style="list-style: none;">
+        <li *ngFor="let item of listaEducacion; let i =index;" >
+            <div class="row2">                
+                <div class="col-2" id="imgContainer">
+                 
+                    <ng-container *ngIf="item.img && item.img.trim() !== ''; else emptyState">
+                        <img src={{item.img}}>
+                      </ng-container>
+                      
+                      <ng-template #emptyState>
+                        <img src="../../../assets/Img/img_notFound.png">
+                      </ng-template>
+
+                </div>
+
+                <div class="col-9">
+                    <h2>{{item.nombre_titulo}}</h2>
+                    <h4>{{item.nombre_colegio}}</h4>
+                    <h4>Desde: <time>{{item.fecha_inicio }}</time> - <time>
+                        Hasta: {{item.fecha_fin }}</time></h4>
+                    <p>{{item.descripcion}}</p>
+                    <p>{{item.descripcion}}</p>                   
+                </div>
+                <div class="col-1" id=icon-edit>                          
+                    <div>
+                        <button type="button" class="btn btn-outline-secondary" (click)="onEdit(i)" *ngIf="isLogged">
+                            <i class="bi bi-pencil-square" ></i>
+                        </button>
+                    </div>
+
+                    <div>
+                        <button type="button" class="btn btn-outline-secondary" (click)="onDelet(i)" *ngIf="isLogged">
+                            <div>
+                                <i class="bi bi-trash" ></i>                               
+                            </div>
+                        </button>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </li>
+    </ul>
+ 
+
+
+</div>

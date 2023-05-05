@@ -1,0 +1,161 @@
+<div class="container-fluid">
+    <div class="row1">
+        <div class="col-11" >
+            <h1>Hard & Soft Skills</h1>
+        </div>
+        <div class="col-1" id="expBtn">
+            <button type="button" class="btn btn-outline-secondary" *ngIf="isLogged"
+                style="width: 100px; height: 70;" routerLink="/new-skill">
+                <i class="bi bi-file-earmark-plus"></i>               
+            </button>
+        </div>  
+    </div>
+
+    <div class="row2">
+        <ul style="list-style: none;" id="itemContainer" class="container-fluid" >
+                <li *ngFor="let item of listaSkill; let i =index;" class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4" id="item">               
+                        <div class="row-sub1" >
+                            <div class="col-9">
+                                <h4 style="margin-left: 10px;">{{item.nombre}}</h4>
+                            </div>
+                            <div class="col-3" id="editBtn">
+                                <button type="button" class="btn btn-outline-secondary" (click)="onEdit(i)" *ngIf="isLogged">
+                                    <i class="bi bi-pencil-square" ></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-secondary" (click)="onDelete(i)" *ngIf="isLogged">
+                                    <i class="bi bi-trash" ></i>
+                                </button>
+                            </div>                              
+                        </div>
+                        
+                        <div class="row2-sub2" >
+                            <circle-progress
+                            [imageSrc]="item.img"
+                            [showImage]="true"
+                            [imageHeight]="100"
+                            [imageWidth]="100"
+                            [percent]="item.porcentaje"
+                            [radius]="100"
+                            [outerStrokeWidth]="8"
+                            [innerStrokeWidth]="4"
+                            [outerStrokeColor]="item.outerColor"
+                            [innerStrokeColor]="item.innerColor"
+                            [animation]="true"
+                            [animationDuration]="1000">
+                            </circle-progress>
+                        </div>
+                </li>                      
+        </ul>            
+    </div>
+
+<!--
+
+
+    <div class="row">
+       <div class="col-4">
+        <circle-progress
+        [imageSrc]="'../../../assets/Img/logos-skills/html.png'"
+        [showImage]="true"
+        [imageHeight]="100"
+        [imageWidth]="100"
+        [percent]="85"
+        [radius]="100"
+        [outerStrokeWidth]="8"
+        [innerStrokeWidth]="4"
+        [outerStrokeColor]="'#e3a56b'"
+        [innerStrokeColor]="'#e3c77b'"
+        [animation]="true"
+        [animationDuration]="1000">
+        </circle-progress>
+       </div>
+
+       <div class="col-4">
+        <circle-progress
+        [imageSrc]="'../../../assets/Img/logos-skills/css.png'"
+        [showImage]="true"
+        [imageHeight]="110"
+        [imageWidth]="90"
+        [percent]="85"
+        [radius]="100"
+        [outerStrokeWidth]="8"
+        [innerStrokeWidth]="4"
+        [outerStrokeColor]="'#0055a2'"
+        [innerStrokeColor]="'#4d87db'"
+        [animation]="true"
+        [animationDuration]="1000">
+        </circle-progress>
+       </div>
+
+       <div class="col-4">
+        <circle-progress
+        [imageSrc]="'../../../assets/Img/logos-skills/js.png'"
+        [showImage]="true"
+        [imageHeight]="90"
+        [imageWidth]="90"
+        [percent]="85"
+        [radius]="100"
+        [outerStrokeWidth]="8"
+        [innerStrokeWidth]="4"
+        [outerStrokeColor]="'#afb140'"
+        [innerStrokeColor]="'#d7d764'"
+        [animation]="true"
+        [animationDuration]="1000">
+        </circle-progress>
+       </div>
+    </div>
+
+    <div class="row">
+       <div class="col-4">
+        <circle-progress
+        [imageSrc]="'../../../assets/Img/logos-skills/c.png'"
+        [showImage]="true"
+        [imageHeight]="90"
+        [imageWidth]="90"
+        [percent]="85"
+        [radius]="100"
+        [outerStrokeWidth]="8"
+        [innerStrokeWidth]="4"
+        [outerStrokeColor]="'#514080'"
+        [innerStrokeColor]="'#9780c7'"
+        [animation]="true"
+        [animationDuration]="1000">
+        </circle-progress>
+       </div>
+
+       <div class="col-4">
+        <circle-progress
+        [imageSrc]="'../../../assets/Img/logos-skills/idioma.png'"
+        [showImage]="true"
+        [imageHeight]="90"
+        [imageWidth]="90"
+        [percent]="85"
+        [radius]="100"
+        [outerStrokeWidth]="8"
+        [innerStrokeWidth]="4"
+        [outerStrokeColor]="'#0a47a7'"
+        [innerStrokeColor]="'#a41409'"
+        [animation]="true"
+        [animationDuration]="1000">
+        </circle-progress>
+       </div>
+
+       <div class="col-4">
+        <circle-progress
+        [imageSrc]="'../../../assets/Img/logos-skills/teamwork.png'"
+        [showImage]="true"
+        [imageHeight]="200"
+        [imageWidth]="300"
+        [percent]="85"
+        [radius]="100"
+        [outerStrokeWidth]="8"
+        [innerStrokeWidth]="4"
+        [outerStrokeColor]="'#b42544'"
+        [innerStrokeColor]="'#40a5e6'"
+        [animation]="true"
+        [animationDuration]="1000">
+        </circle-progress>
+       </div>
+
+    </div>
+    -->
+</div>

@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="row" id="main-row">
+        <div class="col-4" >
+            <div class="row" id="sub-row">
+                <div class="row-6">                      
+                        <img src="../../../assets/Img/perfil.jpg" class="img-fluid">      
+                </div>
+                <div class="row-6">
+                    <h1 style="margin-top: 20px;">{{p.nombre}} {{p.apellido}}</h1>
+                <p>Full Stack Developer Jr</p>
+                </div>                 
+            </div>    
+        </div>
+
+        <div class="col-8" id="desc">
+            <div class="col-11">
+                <h1 style="margin-top: 30px; margin-bottom: 10px;">Acerca de mi</h1>
+                <p>{{p.descripcion}}</p>
+            </div>      
+            <div class="col-1">  
+                <div class="col-1" id=icon-edit>
+                    <button type="button" class="btn btn-outline-secondary" style="width: 100px; height: 70; margin-bottom: 20px;" 
+                    *ngIf="isLogged" routerLink="/new-exp" >
+                        <i class="bi bi-file-earmark-plus"></i>
+                        
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary" (click)="onEdit(0)" *ngIf="isLogged">
+                        <i class="bi bi-pencil-square" ></i>
+                    </button>           
+                </div>
+            </div>      
+
+        </div>
+       
+    </div>
+</div>

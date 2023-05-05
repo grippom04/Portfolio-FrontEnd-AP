@@ -1,0 +1,84 @@
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+  
+              <div class="mb-md-5 mt-md-4 pb-5">
+  
+                <h2 class="fw-bold mb-2">Edicion de Educacion</h2>
+                <p class="text-white-50 mb-5">Por favor, ingresar los datos</p>
+  
+                <form #f="ngForm" (ngSubmit)="onEdit()" novalidate>
+  
+                  <div class="container">
+
+                    <div class="row">
+                      <div class="col-mb-4">
+                        <div class="mb-4 " form-gruop>
+                          <label class="form-label">Nombre del Titulo</label>
+                          <input type="text" class="form-control" id="nombre_titulo" name="nombre_titulo" [(ngModel)]="nombre_titulo" required/>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-mb-4">
+                        <div class="mb-4" form-gruop>
+                          <label class="form-label">Nombre del Colegio</label>
+                          <input type="text" class="form-control" id="nombre_colegio" name="nombre_colegio" [(ngModel)]="nombre_colegio" required/>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-mb-4">
+                        <div class="mb-4" form-gruop>
+                          <label class="form-label">Fecha de Inicio</label>
+                          <input type="text" class="form-control" id="fecha_inicio" name="fecha_inicio" [(ngModel)]="fecha_inicio" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-mb-4">
+                        <div class="mb-4" form-gruop>
+                          <label class="form-label">Fecha de Fin</label>
+                          <input type="text" class="form-control" id="fecha_fin" name="fecha_fin" [(ngModel)]="fecha_fin" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-mb-4">
+                        <div class="mb-4" form-gruop>
+                          <label class="form-label">Descripcion</label>
+                          <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="descripcion" required/>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-mb-4">
+                          <div class="mb-4 " form-gruop>
+                              <label class="form-label">Imagen</label>
+                              <input type="file" class="form-control" id="img" name="img" [(ngModel)]="img"
+                              (change)="onAction($event)" accept=".png, .jpg, .jpeg"/>
+                          </div>
+                      </div>
+                    </div> 
+                  </div>
+                  <button class="btn btn-outline-light btn-lg px-5" type="submit">Terminar</button>
+  
+                </form>
+  
+              </div>
+  
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

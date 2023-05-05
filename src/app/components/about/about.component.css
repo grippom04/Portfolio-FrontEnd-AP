@@ -1,0 +1,31 @@
+img{
+    border-radius: 50%; 
+    margin-top: -100px;
+}
+#main-row{
+    display: flex;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: thick double black;
+    background-color: rgba(151, 150, 148, 0.429);
+    justify-content: stretch;
+}
+
+#icon-edit{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#desc{    
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;    
+    border-radius: 10px;
+    border-top: rgba(151, 128, 83, 0.631) solid;
+    border-bottom: rgba(151, 128, 83, 0.287) solid;
+    background-color: rgba(133, 133, 82, 0.075);
+    width: 65%;
+}

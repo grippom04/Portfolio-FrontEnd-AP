@@ -1,0 +1,5 @@
+.container-fluid{
+    background-color: #bdb8ad;
+    display: flex;
+    flex-direction: column;
+}

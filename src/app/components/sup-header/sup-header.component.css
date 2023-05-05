@@ -1,0 +1,24 @@
+.row{
+    height: 60px;
+}
+#left{
+    display: flex;
+    justify-content: flex-start;
+    height: 60px;
+}
+
+#center{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 60px;
+    margin-top: -10px;
+    margin-right: -25px;
+}
+
+#right{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 60px;
+}

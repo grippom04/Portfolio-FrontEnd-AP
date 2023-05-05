@@ -1,0 +1,11 @@
+button{
+    margin-right: 5px;
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+}
+img{
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
