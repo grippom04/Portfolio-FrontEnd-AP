@@ -11,14 +11,28 @@ import { TokenService } from 'src/app/services/token.service';
 })
 export class AboutComponent {
 
-p : Persona = new Persona("","","","","");
-listaPersona:Persona[]=[];
 isLogged=false;
+nombre: string="Sin Nombre";
+apellido: string="Sin Apellido";
+descripcion: string="Sin descripcion";
+nacimiento: string="nn";
+img: string="../../../assets/Img/perfil.jpg";
+id! : number;
 
-constructor(public personaService: PersonaService, private tokenService : TokenService, private router:Router){}
+constructor(public personaService: PersonaService, private tokenService : TokenService, private router:Router){
+
+}
 
   ngOnInit(): void{
-    this.CargarPersonas(); 
+    this.personaService.getPersona(1).subscribe(data =>{
+      const p : Persona = data;
+      this.nombre=p.nombre;
+      this.apellido=p.apellido,this.apellido;
+      this.descripcion=p.descripcion;
+      this.nacimiento=p.nacimiento;
+      this.img=p.img;
+      this.id=p.id;
+    }) 
     if(this.tokenService.getToken()){
       this.isLogged=true;
     }
@@ -27,20 +41,9 @@ constructor(public personaService: PersonaService, private tokenService : TokenS
     }
   }
 
-  public CargarPersonas(): void{
-    this.personaService.getAllPersona().subscribe(data =>{
-      this.listaPersona = data;
-      this.p = this.listaPersona[0];
-      if(this.listaPersona[0].img=='' ||
-         this.listaPersona[0].img==null ||
-         this.listaPersona[0].img =="null" ||
-         this.listaPersona[0].img =="")
-         this.p.img="../../../assets/Img/perfil.jpg"
-    })
-  }
 
   public onEdit(i:number):void {
-    this.personaService.setId(this.listaPersona[i].id);
+    this.personaService.setId(this.id);
     this.router.navigate(['/edit-per']);
   }
 

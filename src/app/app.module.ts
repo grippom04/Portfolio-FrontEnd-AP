@@ -27,6 +27,9 @@ import { ColorPickerModule } from 'ngx-color-picker';
 import { EditSkillComponent } from './components/edit-skill/edit-skill.component';
 import { NgpImagePickerModule } from 'ngp-image-picker';
 import { EditPerComponent } from './components/edit-per/edit-per.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 
 
@@ -56,7 +59,9 @@ import { EditPerComponent } from './components/edit-per/edit-per.component';
     FormsModule,
     BrowserAnimationsModule,
     ColorPickerModule,
-    NgpImagePickerModule
+    NgpImagePickerModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage()),
     
   ],
 

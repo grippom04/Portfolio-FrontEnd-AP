@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Persona } from 'src/app/model/persona.model';
+import { ImageServiceService } from 'src/app/services/image-service.service';
 import { PersonaService } from 'src/app/services/persona.service';
 
 @Component({
@@ -15,26 +16,27 @@ export class EditPerComponent {
   descripcion: string="";
   nacimiento: string="";
   img: string="";
-  
 
-  constructor(private personaService: PersonaService, private router:Router){}
 
-  ngOnInit() {
-    const pos : number = this.personaService.getId();
-    this.personaService.getPersona(pos).subscribe(data =>{
-      const p : Persona=data;
-      this.nombre=p.nombre;
-      this.apellido=p.apellido;
-      this.descripcion=p.descripcion;
-      this.nacimiento=p.nacimiento
-      this.img=p.img;
+  constructor(private personaService: PersonaService, private router:Router, public imageService : ImageServiceService){}
+
+  ngOnInit() {   
+    this.personaService.getPersona(1).subscribe(data =>{
+      const p1 : Persona=data;
+      this.nombre=p1.nombre;
+      this.apellido=p1.apellido;
+      this.descripcion=p1.descripcion;
+      this.nacimiento=p1.nacimiento;
+      this.img=p1.img;
+      this.imageService.url=this.img;
     })
   }
 
   onEdit():void{
-    const p =  new Persona(this.nombre,this.apellido,this.descripcion,this.nacimiento,this.img);
-    p.setId(this.personaService.getId());                          
-    this.personaService.editPersona(p).subscribe(data =>{
+    const p2 =  new Persona(this.nombre,this.apellido,this.nacimiento,this.descripcion,this.imageService.url);
+    p2.setId(1);
+    console.log(p2);                        
+    this.personaService.editPersona(p2).subscribe(data =>{
       alert("Persona Modificado");
       this.router.navigate(['']);
     }, err =>{
@@ -42,9 +44,9 @@ export class EditPerComponent {
         this.router.navigate(['']);
     })                               
   }
-
-  onAction($event : any){
-    
+  setImage($event : any){
+    const name = "imagen-perfil-"+Math.random()
+    this.imageService.LoadImage($event,name)
   }
 
 

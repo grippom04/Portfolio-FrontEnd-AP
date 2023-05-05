@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Skill } from 'src/app/model/skill';
+import { ImageServiceService } from 'src/app/services/image-service.service';
 import { SkillServiceService } from 'src/app/services/skill-service.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { SkillServiceService } from 'src/app/services/skill-service.service';
 })
 export class EditSkillComponent {
 
-  constructor(private skillService: SkillServiceService, private router:Router){}
+  constructor(private skillService: SkillServiceService, private router:Router, public imageService : ImageServiceService){}
 
   img : string = '' ;
   porcentaje:number = 0;
@@ -27,6 +28,7 @@ export class EditSkillComponent {
       this.outerColor=s.outerColor;
       this.innerColor=s.innerColor
       this.nombre=s.nombre;
+      this.imageService.url=s.img;
     })
   }
 
@@ -44,8 +46,9 @@ export class EditSkillComponent {
                                   
   }
 
-  onAction($event : any){
-    
+  setImage($event : any){
+    const name = "imagen-exp-"+Math.random()
+    this.imageService.LoadImage($event,name)
   }
 
 }

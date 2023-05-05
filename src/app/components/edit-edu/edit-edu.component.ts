@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Educacion } from 'src/app/model/educacion';
 import { EducacionServiceService } from 'src/app/services/educacion-service.service';
+import { ImageServiceService } from 'src/app/services/image-service.service';
 
 @Component({
   selector: 'app-edit-edu',
@@ -17,7 +18,7 @@ export class EditEduComponent {
   fecha_fin: string =''; 
   descripcion: string='';
 
-  constructor(private educacionService: EducacionServiceService, private router:Router){}
+  constructor(private educacionService: EducacionServiceService, private router:Router, public imageService : ImageServiceService){}
 
 
 ngOnInit() {
@@ -30,12 +31,13 @@ this.educacionService.getEducacion(pos).subscribe(data =>{
   this.fecha_inicio=e.fecha_inicio;
   this.fecha_fin=e.fecha_fin;
   this.descripcion=e.descripcion;
+  this.imageService.url = this.img;
 })
 
 }  
 
 onEdit():void{
-  const e =  new Educacion(this.img,this.nombre_titulo,this.nombre_colegio,this.fecha_inicio,
+  const e =  new Educacion(this.imageService.url,this.nombre_titulo,this.nombre_colegio,this.fecha_inicio,
                                     this.fecha_fin,this.descripcion);
   e.setId(this.educacionService.getId());                          
   this.educacionService.editEducacion(e).subscribe(data =>{
@@ -47,8 +49,9 @@ onEdit():void{
   })
                                
 }
-onAction($event : any){
-    
+setImage($event : any){
+  const name = "imagen-edu-"+Math.random()
+  this.imageService.LoadImage($event,name)
 }
 
 }

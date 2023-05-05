@@ -63,11 +63,14 @@
                                 <div class="col-mb-4">
                                     <div class="mb-4 " form-gruop>
                                         <label class="form-label">Imagen</label>
-                                        <input type="file" class="form-control" id="img" name="img" [(ngModel)]="img"
-                                        (change)="onAction($event)" accept=".png, .jpg, .jpeg"/>
+                                        <input type="file" class="form-control" id="img" name="img"
+                                        (change)="setImage($event)" accept=".png, .jpg, .jpeg"/>
                                     </div>
                                 </div>
                             </div>  
+                            <div>
+                                <img [src]="imageService.url" width="200px" height="200px">
+                            </div>
                         </div>
                         <div style="margin-top: 20px;">
                             <div class="row">
