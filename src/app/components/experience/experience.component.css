@@ -4,6 +4,7 @@
     border: thick double black;
     background-color: rgba(151, 150, 148, 0.429);
     justify-content: stretch;
+    min-height: 200px;
 }
 .row1{
     display: flex;
@@ -19,16 +20,17 @@
     background-color: rgba(133, 133, 82, 0.075);
 }
 img{
-    height: 100%;
     width: 100%;
+    padding: 20px;
+    height: 250px;
+
 }
 #imgContainer{
     display: flex;
-    align-items: center;
+    flex-direction: column-reverse;
     justify-content: flex-end;
     margin: 3px;
-    margin-right: 5px;
-    
+    margin-right: 5px;   
 }
 #expBtn{
     display: flex;

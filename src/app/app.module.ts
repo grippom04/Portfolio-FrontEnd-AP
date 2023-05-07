@@ -30,6 +30,9 @@ import { EditPerComponent } from './components/edit-per/edit-per.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { ProyectsComponent } from './components/proyects/proyects.component';
+import { EditProyComponent } from './components/edit-proy/edit-proy.component';
+import { NewProyComponent } from './components/new-proy/new-proy.component';
 
 
 
@@ -47,7 +50,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     SkilsComponent,
     HomeComponent,
     LoginComponent,  
-    NewExpComponent, EditExpComponent, NewEduComponent, EditEduComponent, NewSkillComponent, EditSkillComponent, EditPerComponent,
+    NewExpComponent, EditExpComponent, NewEduComponent, EditEduComponent, NewSkillComponent, EditSkillComponent, EditPerComponent, ProyectsComponent, EditProyComponent, NewProyComponent,
     
 
   ],

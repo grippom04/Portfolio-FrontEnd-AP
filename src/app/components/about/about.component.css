@@ -8,7 +8,8 @@ img{
     border-radius: 10px;
     border: thick double black;
     background-color: rgba(151, 150, 148, 0.429);
-    justify-content: stretch;
+    justify-content: space-evenly;
+
 }
 
 #icon-edit{
@@ -27,5 +28,5 @@ img{
     border-top: rgba(151, 128, 83, 0.631) solid;
     border-bottom: rgba(151, 128, 83, 0.287) solid;
     background-color: rgba(133, 133, 82, 0.075);
-    width: 65%;
+
 }
