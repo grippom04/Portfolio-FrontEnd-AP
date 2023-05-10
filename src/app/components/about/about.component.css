@@ -6,8 +6,10 @@ img{
     display: flex;
     margin-top: 10px;
     border-radius: 10px;
-    border: thick double black;
-    background-color: rgba(151, 150, 148, 0.429);
+    /*border: thick double black;*/
+    border-top: rgba(54, 56, 56, 0.631) solid;
+    border-bottom: rgba(54, 56, 56, 0.3) solid;
+
     justify-content: space-evenly;
 
 }
@@ -21,12 +23,21 @@ img{
 }
 
 #desc{    
+    
     display: flex;
     margin-top: 20px;
     margin-bottom: 20px;    
     border-radius: 10px;
-    border-top: rgba(151, 128, 83, 0.631) solid;
-    border-bottom: rgba(151, 128, 83, 0.287) solid;
-    background-color: rgba(133, 133, 82, 0.075);
+    /*
+    border-top: rgba(54, 56, 56, 0.631) solid;
+    border-bottom: rgba(54, 56, 56, 0.3) solid;
+    */
+    background: #b5acbf;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right,rgba(108, 109, 115, 0.628), rgba(147, 154, 171, 0.069));
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right,rgba(91, 94, 97, 0.301), rgba(147, 154, 171, 0.221))
 
 }

@@ -1,5 +1,13 @@
 .container-fluid{
-    background-color: #bdb8ad;
     display: flex;
     flex-direction: column;
+/* fallback for old browsers */
+background: #b5acbf;
+    
+/* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(to right,  rgba(83, 80, 87, 0.821), rgba(145, 143, 148, 0.752));
+
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to right,  rgba(16, 43, 79, 0.678), rgba(34, 71, 83, 0.529))
+    
 }
