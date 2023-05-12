@@ -28,12 +28,12 @@ export class EditSkillComponent {
       this.outerColor=s.outerColor;
       this.innerColor=s.innerColor
       this.nombre=s.nombre;
-      this.imageService.url=s.img;
+      this.imageService.url=this.img;
     })
   }
 
   onEdit():void{
-    const s =  new Skill(this.img,this.porcentaje,this.outerColor,this.innerColor,
+    const s =  new Skill(this.imageService.url,this.porcentaje,this.outerColor,this.innerColor,
                                       this.nombre);
     s.setId(this.skillService.getId());                          
     this.skillService.editSkill(s).subscribe(data =>{
